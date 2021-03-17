@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LessonScreen : MonoBehaviour
 {
     public Button quizButton;
+    public Text xpText;
     private int currentLesson;
     private int currentXP;
     // Start is called before the first frame update
@@ -13,7 +14,7 @@ public class LessonScreen : MonoBehaviour
     {
        currentLesson = PlayerPrefs.GetInt("Current Lesson");
        currentXP = PlayerPrefs.GetInt("Lesson" + currentLesson + "XP");
-           
+        xpText.text = "Experience: " + currentXP;
        if(currentXP < 100)
        {
            quizButton.interactable = false;
