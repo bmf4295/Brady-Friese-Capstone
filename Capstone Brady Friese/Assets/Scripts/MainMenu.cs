@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         if (PlayerPrefs.GetInt("Lesson2Complete")== 0)
         {
             lesson2Button.interactable = false;
