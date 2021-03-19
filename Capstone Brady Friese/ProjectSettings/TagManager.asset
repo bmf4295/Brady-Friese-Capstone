@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LunarStation
   - CurrentKanji
+  - Ground
+  - startPosLunarLander
   layers:
   - Default
   - TransparentFX

@@ -657,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e7145adf6163b4796864a466686221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1752284289}
   thrust: 4
   horizontalMoveSpeed: 10
   isFlat: 1
@@ -1021,6 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreObj: {fileID: 1192410709}
+  ship: {fileID: 1351265362}
 --- !u!114 &1752284292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerObj: {fileID: 1752284289}
   kanjiDisplay: {fileID: 606740542}
+  answers: []
 --- !u!1 &1765585920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 395724350638869035, guid: d0f02c25db7cda247b967b728bc4ec91,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 395724350638869036, guid: d0f02c25db7cda247b967b728bc4ec91,
         type: 3}
       propertyPath: m_RootOrder
@@ -1205,6 +1213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Starting Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208503282793973229, guid: 4169ec794a5ebb346aae9ffa73f06096,
+        type: 3}
+      propertyPath: m_TagString
+      value: startPosLunarLander
       objectReference: {fileID: 0}
     - target: {fileID: 8541274581031736241, guid: 4169ec794a5ebb346aae9ffa73f06096,
         type: 3}

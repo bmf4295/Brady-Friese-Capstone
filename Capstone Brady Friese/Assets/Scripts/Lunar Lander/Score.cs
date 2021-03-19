@@ -6,14 +6,20 @@ public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject scoreObj;
+    public GameObject ship;
     private TextMesh scoreText;
    
  
     int points=0;
+    private void Awake()
+    {
+        scoreText = scoreObj.GetComponent<TextMesh>();
+        scoreText.text = string.Format("Score:{0}", points);
+    }
     void Start()
     {
-        scoreText= scoreObj.GetComponent<TextMesh>();
-  
+
+ 
     }
 
     // Update is called once per frame
@@ -26,5 +32,18 @@ public class Score : MonoBehaviour
     {
         points += 1;
         scoreText.text = string.Format("Score:{0}", points);
+    }
+
+    public void checkAnswer(string guess)
+    {
+        KanjiDisplay dis = this.gameObject.GetComponent<KanjiDisplay>();
+        List<string> answers = dis.answers;
+        if (answers.Contains(guess))
+        {
+            changeScore();  
+        }
+        dis.generateNewKanjiOrReading();
+        Ship s = ship.GetComponent<Ship>();
+        s.resetPos();
     }
 }

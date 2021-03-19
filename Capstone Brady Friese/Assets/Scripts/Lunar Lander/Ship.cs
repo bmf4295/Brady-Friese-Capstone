@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject gameManager;
     Rigidbody2D shipRigidBody;
     public float thrust = 3;
     public float horizontalMoveSpeed;
@@ -31,8 +32,17 @@ public class Ship : MonoBehaviour
             shipRigidBody.AddForce(Vector3.up * thrust);
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
+    public void resetPos()
     {
-       
+        this.transform.position = GameObject.FindGameObjectWithTag("startPosLunarLander").transform.position;
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+      
+        if (col.gameObject.tag == "LunarStation")
+        {
+            string guess = col.gameObject.GetComponentInChildren<TextMesh>().text;
+            gameManager.GetComponent<Score>().checkAnswer(guess);
+        }
     }
 }

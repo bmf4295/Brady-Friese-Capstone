@@ -8,23 +8,25 @@ public class KanjiDisplay : MonoBehaviour
     public GameObject gameManagerObj;
     public GameObject kanjiDisplay;
     private GameObject[] stations;
-    private ImportKanji kanjiImporter;
-    private string[] correctReadings;
     private string currentKanjiOrReading;
     private bool answerIsKanji;
-    private List<string> answers;
-    List<string> usedFakeAnswers;
+    public List<string> answers;
+    private List<string> usedFakeAnswers;
     private Kanji[] lessonKanji;
-    void Start()
+    private void Awake()
     {
         lessonKanji = new Kanji[5];
         answers = new List<string>();
         usedFakeAnswers = new List<string>();
         stations = GameObject.FindGameObjectsWithTag("LunarStation");
-       ImportKanji temp =  gameManagerObj.GetComponent<ImportKanji>();
+        ImportKanji temp = gameManagerObj.GetComponent<ImportKanji>();
         lessonKanji = temp.lessonKanji;
-      
+
         generateNewKanjiOrReading();
+    }
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
