@@ -14,10 +14,15 @@ public class ImportKanji : MonoBehaviour
     public KanjiCollection everyKanji;
     public Kanji[] lessonKanji;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         readKanji();
-        lessonKanji= everyKanji.getLessonKanji();
+        lessonKanji = everyKanji.getLessonKanji();
+    }
+    void Start()
+    {
+       
+
     }
 
     // Update is called once per frame
@@ -25,7 +30,10 @@ public class ImportKanji : MonoBehaviour
     {
         
     }
-
+    public Kanji[] getLesson()
+    {
+        return lessonKanji;
+    }
     public KanjiCollection readKanji()
     {
         filePath = string.Format("{0}/JSON/CapstoneKanji.JSON", Application.dataPath);
@@ -59,13 +67,14 @@ public class ImportKanji : MonoBehaviour
     }
 
     
-    public void updateKanjiStats(Kanji kanjiToUpdate, bool correct)
+    public void updateKanjiStats(string kanjiToUpdate, bool correct)
     {
-        everyKanji.allKanji[kanjiToUpdate.id].timesEncountered++;
+        everyKanji.findKanji(kanjiToUpdate).timesEncountered++;
         if (correct)
         {
-            everyKanji.allKanji[kanjiToUpdate.id].timesCorrect++;
+            everyKanji.findKanji(kanjiToUpdate).timesCorrect++;
         }
+        writeToFile();
     }
 }
 

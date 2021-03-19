@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StationManager : MonoBehaviour
+public class Station : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject rocket;
-    private GameObject[] stationArray;
     void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 }
+  

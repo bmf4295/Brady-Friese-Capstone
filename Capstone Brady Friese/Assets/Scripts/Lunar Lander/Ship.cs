@@ -9,7 +9,6 @@ public class Ship : MonoBehaviour
     public float thrust = 3;
     public float horizontalMoveSpeed;
     public bool isFlat = true;
-
     void Start()
     {
         shipRigidBody = GetComponent<Rigidbody2D>();
@@ -31,5 +30,9 @@ public class Ship : MonoBehaviour
 
             shipRigidBody.AddForce(Vector3.up * thrust);
         }
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+       
     }
 }

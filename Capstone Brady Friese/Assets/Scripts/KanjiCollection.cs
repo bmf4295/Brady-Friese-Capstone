@@ -6,7 +6,7 @@ using UnityEngine;
 public class KanjiCollection 
 {
     public Kanji[] allKanji;
-    private Kanji [] lessonKanji;
+    public Kanji [] lessonKanji;
     public override string ToString()
     {
         string result = "All Kanji\n";
@@ -32,7 +32,7 @@ public class KanjiCollection
         int length = (endIndex - startIndex) + 1;
         lessonKanji = new Kanji[length];
         int slicedindex=0;
-        for(int i = 0; i <=allKanji.Length; i++)
+        for(int i = 0; i <allKanji.Length; i++)
         {
             if(i >= startIndex && i <= endIndex)
             {
@@ -65,5 +65,13 @@ public class KanjiCollection
         return lessonKanji;
     }
 
-
+    public Kanji findKanji(string kanjiToFind)
+    {
+        Kanji correctKanji = new Kanji();
+        foreach (Kanji k in allKanji)
+        {
+            if (k.kanji == kanjiToFind) correctKanji= k;
+        }
+        return correctKanji;
+    }
 }
