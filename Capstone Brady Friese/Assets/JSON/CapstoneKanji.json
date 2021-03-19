@@ -10,7 +10,8 @@
         "いち"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":0
     },
     {
       "kanji": "二",
@@ -22,7 +23,8 @@
         "じ"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":1
     },
     {
       "kanji": "三",
@@ -33,7 +35,8 @@
         "さん"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":2
     },
     {
       "kanji": "四",
@@ -45,7 +48,8 @@
         "し"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":3
     },
     {
       "kanji": "五",
@@ -56,7 +60,8 @@
         "ご"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":4
     },
     {
       "kanji": "六",
@@ -68,7 +73,8 @@
         "りく"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":5
     },
     {
       "kanji": "七",
@@ -80,7 +86,8 @@
         "しち"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":6
     },
     {
       "kanji": "八",
@@ -92,7 +99,8 @@
         "はち"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":7
     },
     {
       "kanji": "九",
@@ -104,7 +112,8 @@
         "く"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":8
     },
     {
       "kanji": "十",
@@ -120,6 +129,8 @@
       ],
       "timesCorrect": 0,
       "timesEncountered": 0
+      ,
+      "id":9
     },
     {
       "kanji": "食",
@@ -131,7 +142,8 @@
         "いち"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":10
     },
     {
       "kanji": "飲",
@@ -145,7 +157,8 @@
         "じき"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":11
     },
     {
       "kanji": "来",
@@ -159,7 +172,8 @@
         "たい"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":12
     },
     {
       "kanji": "行",
@@ -174,7 +188,8 @@
         "あん"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":13
     },
     {
       "kanji": "会",
@@ -187,7 +202,8 @@
         "え"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":14
     },
     {
       "kanji": "山",
@@ -199,7 +215,8 @@
         "せん"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":15
     },
     {
       "kanji": "車",
@@ -210,7 +227,8 @@
         "しゃ"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":16
     },
     {
       "kanji": "本",
@@ -221,7 +239,8 @@
         "ほん"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":17
     },
     {
       "kanji": "人",
@@ -232,7 +251,8 @@
         "じん"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":18
     },
     {
       "kanji": "出",
@@ -244,7 +264,8 @@
         "しゅつ"
       ],
       "timesCorrect": 0,
-      "timesEncountered": 0
+      "timesEncountered": 0,
+      "id":19
     }
   ]
 }
