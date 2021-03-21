@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     public GameObject scoreObj;
     public GameObject ship;
+    public GameObject finalModal;
     private TextMesh scoreText;
    
  

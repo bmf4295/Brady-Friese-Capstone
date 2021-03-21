@@ -1003,7 +1003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752284289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.14, y: 2.33, z: -4.0110536}
+  m_LocalPosition: {x: 4.96, y: 2.79, z: -4.0110536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1023,6 +1023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreObj: {fileID: 1192410709}
   ship: {fileID: 1351265362}
+  finalModal: {fileID: 1264531729209652092, guid: 04605a7b5a4b1a345bf55664c34dafe8,
+    type: 3}
 --- !u!114 &1752284292
 MonoBehaviour:
   m_ObjectHideFlags: 0
