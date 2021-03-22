@@ -70,7 +70,7 @@ public class ManageGame : MonoBehaviour
 
     public void submitAnswer()
     {
-        Debug.Log("hello");
+      
         string guess = AnswerDisplay.text;
         if (answers.Contains(guess))
         {
