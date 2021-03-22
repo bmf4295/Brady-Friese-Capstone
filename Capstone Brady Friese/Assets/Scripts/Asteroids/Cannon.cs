@@ -8,7 +8,7 @@ public class Cannon : MonoBehaviour
     public GameObject posTracker;
     private Vector2 fingerDown;
     private Vector2 fingerUp;
-    public float swipe_thresh= 0.05f;
+    public double swipe_thresh= .015;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,50 +18,48 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Input.touchCount > 0)
+
+        if (Input.touchCount > 0)
         {
-           // Debug.Log("Touch Detected");
+
             Touch touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began)
             {
-                //Debug.Log("Touch Begin");
+
                 fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
                 fingerUp = Camera.main.ScreenToWorldPoint(touch.position);
-            }else if (touch.phase == TouchPhase.Moved)
+            }
+            else if (touch.phase == TouchPhase.Moved)
             {
-              //  Debug.Log("Touch Moved");
-                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
-                checkSwipe();
-            }else if (touch.phase == TouchPhase.Ended)
-            {
-             //   Debug.Log("Touch Release");
+
                 fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
                 checkSwipe();
             }
-          // Vector3 pos = Camera.main.ScreenToWorldPoint(touch.position);
+            else if (touch.phase == TouchPhase.Ended)
+            {
 
-            
+                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
+                checkSwipe();
+            }
 
         }
+   
     }
     
     private void checkSwipe()
     {
-       // Debug.Log(horizontalMove());
-        if(horizontalMove() > 0.0005)
+      
+        if(horizontalMove() > swipe_thresh)
         {
            
             if(fingerDown.x - fingerUp.x > 0)
             {
-                //Debug.Log(cannon.transform.rotation) ;
+             
                 Quaternion rotation = cannon.transform.rotation;
-                Debug.Log("Neg X");
-                Debug.Log(rotation.z);
+
                 if (rotation.w > 0.8f)
                 {
                     rotation.z -= 0.01f;
-
                 }
                 else
                 {
@@ -74,9 +72,6 @@ public class Cannon : MonoBehaviour
             else if (fingerDown.x - fingerUp.x < 0)
             {
                 Quaternion rotation = cannon.transform.rotation;
-
-                Debug.Log("Pos X");
-                Debug.Log(rotation.z);
 
                 if (rotation.w > 0.8f)
                 {
