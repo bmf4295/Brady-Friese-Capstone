@@ -23,74 +23,10 @@ public class Cannon : MonoBehaviour
         {
 
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-
-                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
-                fingerUp = Camera.main.ScreenToWorldPoint(touch.position);
-            }
-            else if (touch.phase == TouchPhase.Moved)
-            {
-
-                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
-                checkSwipe();
-            }
-            else if (touch.phase == TouchPhase.Ended)
-            {
-
-                fingerDown = Camera.main.ScreenToWorldPoint(touch.position);
-                checkSwipe();
-            }
+            posTracker.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
 
         }
    
     }
     
-    private void checkSwipe()
-    {
-      
-        if(horizontalMove() > swipe_thresh)
-        {
-           
-            if(fingerDown.x - fingerUp.x > 0)
-            {
-             
-                Quaternion rotation = cannon.transform.rotation;
-
-                if (rotation.w > 0.8f)
-                {
-                    rotation.z -= 0.01f;
-                }
-                else
-                {
-                    rotation.z += 0.01f;
-                    rotation.w = 0.79f;
-                }
-
-                cannon.transform.rotation = rotation;
-            }
-            else if (fingerDown.x - fingerUp.x < 0)
-            {
-                Quaternion rotation = cannon.transform.rotation;
-
-                if (rotation.w > 0.8f)
-                {
-                 
-                    rotation.z += 0.01f;
-                    
-                }
-                else
-                {
-                    rotation.z -= 0.01f;
-                    rotation.w = 0.79f;
-                }
-                cannon.transform.rotation = rotation;
-            }
-
-        }
-    }
-    float horizontalMove()
-    {
-        return Mathf.Abs(fingerDown.x - fingerUp.y);
-    }
 }
