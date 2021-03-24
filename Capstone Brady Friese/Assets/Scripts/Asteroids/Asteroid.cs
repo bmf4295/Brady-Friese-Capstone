@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class AsteroidManager : MonoBehaviour
+using UnityEngine.EventSystems;
+public class Asteroid : MonoBehaviour
 {
     // Start is called before the first frame update
-
-
+    public GameObject gameManager;
+    public GameObject kanjiDisplay;
+    public GameObject scoreObj;
+    private List<string> answers;
     void Start()
     {
-        
+        answers = gameManager.GetComponent<AsteroidManager>().answers;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime);
-        if(this.gameObject.transform.position.x < -4)
+        
+    }
+    public void checkAnswer(BaseEventData baseEvent)
+    {
+       
+        if (baseEvent != null)
         {
-            this.gameObject.transform.position = new Vector3(4, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+            if (answers.Contains(this.gameObject.GetComponent<TextMesh>().text))
+            {
+
+            }
         }
+
     }
 }

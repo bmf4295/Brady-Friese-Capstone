@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public GameObject cannon;
     public GameObject posTracker;
+
     private Vector2 fingerDown;
     private Vector2 fingerUp;
     public double swipe_thresh= .015;
@@ -23,10 +23,18 @@ public class Cannon : MonoBehaviour
         {
 
             Touch touch = Input.GetTouch(0);
-            posTracker.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
-
+          //  posTracker.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
+            //startTrigger();
         }
    
+    }
+
+    void startTrigger()
+    {
+        posTracker.GetComponent<BoxCollider2D>().isTrigger = true;
+        new WaitForEndOfFrame();
+        posTracker.GetComponent<BoxCollider2D>().isTrigger = false ;
+
     }
     
 }

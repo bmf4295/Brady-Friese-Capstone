@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1782821265070523165}
   - component: {fileID: 1782821265070523164}
   - component: {fileID: 5994766516045581144}
+  - component: {fileID: -326073187365952339}
+  - component: {fileID: -7450452487829304553}
+  - component: {fileID: 92179105335247863}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -97,6 +100,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88728802c3ac8c45a7580fb95a81e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroid: {fileID: 1782821265070523167}
+  kanjiDisplay: {fileID: 0}
+  asteroidList: []
+  answers: []
+  numAsteroidsOnScreen: 0
+  asteroidPos: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
+--- !u!114 &-326073187365952339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782821265070523167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 92179105335247863}
+          m_TargetAssemblyTypeName: Asteroid, Assembly-CSharp
+          m_MethodName: checkAnswer
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!61 &-7450452487829304553
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782821265070523167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &92179105335247863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782821265070523167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd874c1abb154e642ad294df3df73eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 6466525296316568941, guid: d7c7f537664344a4ca273ef169b2c0e4,
+    type: 3}
+  kanjiDisplay: {fileID: 6772814134896307410, guid: e9e2013163dc28d45acf54fde2b666c6,
+    type: 3}
 --- !u!1 &1782821266168434109
 GameObject:
   m_ObjectHideFlags: 0

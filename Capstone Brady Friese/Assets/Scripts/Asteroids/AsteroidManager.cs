@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class AsteroidManager : MonoBehaviour
 {
 
     public GameObject asteroid;
+    public GameObject kanjiDisplay;
     public List<GameObject> asteroidList;
+    public List<string> answers;
     public int numAsteroidsOnScreen;
     public Vector3 asteroidPos;
     public Vector3 velocity;
@@ -14,14 +16,17 @@ public class Asteroid : MonoBehaviour
     float cameraHeight;
     float cameraWidth;
     private bool rightAnswerSpawned;
-    
+    private ImportKanji kanjiImporter;
+    private Kanji[] lesson;
     void Start()
     {
         mainCamera = Camera.main;
-      
+        answers = new List<string>();
         cameraHeight = mainCamera.orthographicSize;
         cameraWidth = cameraWidth * mainCamera.aspect;
-      
+
+        kanjiImporter = this.gameObject.GetComponent<ImportKanji>();
+
         asteroidList = new List<GameObject>();
         spawnAsteroids(numAsteroidsOnScreen);
     }
@@ -32,28 +37,31 @@ public class Asteroid : MonoBehaviour
         asteroidList.Clear();
         asteroidList.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
 
+
+
+
         moveAsteroids();
     }
 
     void moveAsteroids()
     {
-        for(int i = 0; i< asteroidList.Count; i++)
+        for (int i = 0; i < asteroidList.Count; i++)
         {
             Vector3 acceleration = 1.2f * asteroidList[i].transform.up;
             velocity += acceleration;
-            velocity = Vector3.ClampMagnitude(velocity, .0040f);
+            velocity = Vector3.ClampMagnitude(velocity, .0015f);
             asteroidList[i].transform.position += velocity;
-           
+
         }
-      
-        
+
+
         for (int i = 0; i <= asteroidList.Count - 1; i++)
         {
             if (asteroidList[i].transform.position.x > 2.4f)
             {
                 asteroidList[i].transform.position = new Vector3(-2.3f, transform.position.y, 0);
-              
-              
+
+
             }
             else if (asteroidList[i].transform.position.x < -2.4f)
             {
@@ -62,26 +70,28 @@ public class Asteroid : MonoBehaviour
             if (asteroidList[i].transform.position.y > 5.2f)
             {
                 asteroidList[i].transform.position = new Vector3(asteroidList[i].transform.position.x, -5.0f, 0);
-              
+
             }
             else if (asteroidList[i].transform.position.y < -5.2f)
             {
                 asteroidList[i].transform.position = new Vector3(asteroidList[i].transform.position.x, 5.0f, 0);
-                
+
             }
 
         }
 
+
+
     }
 
-    void  addKanjiToAsteroid()
+    void addKanjiToAsteroid()
     {
 
     }
 
     void spawnAsteroids(int count)
     {
-        for(int i = 0; i< count; i++)
+        for (int i = 0; i < count; i++)
         {
             asteroidPos = new Vector3(Random.Range(cameraWidth, -cameraWidth), Random.Range(cameraHeight, -cameraHeight), 0);
             GameObject temp = Instantiate(asteroid, asteroidPos, Quaternion.Euler(0, 0, Random.Range(0f, 359f)));
@@ -89,4 +99,6 @@ public class Asteroid : MonoBehaviour
             asteroidList.Add(temp);
         }
     }
+
+   
 }
