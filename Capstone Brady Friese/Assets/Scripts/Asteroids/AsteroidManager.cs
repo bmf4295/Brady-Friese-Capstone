@@ -20,8 +20,11 @@ public class AsteroidManager : MonoBehaviour
     public List<string> answers;
     public List<string> fakeAnswers;
     public bool answerOnscreen;
+    public int score;
+    public GameObject scoreTracker;
     void Start()
     {
+        score = 0;
         kanjiImporter = this.gameObject.GetComponent<ImportKanji>();
         lesson = kanjiImporter.getLesson();
         answerOnscreen = false;
@@ -31,13 +34,17 @@ public class AsteroidManager : MonoBehaviour
         cameraHeight = mainCamera.orthographicSize;
         cameraWidth = cameraWidth * mainCamera.aspect;
         asteroidList = new List<GameObject>();
-        generateAnswer();
-        spawnAsteroids(numAsteroidsOnScreen);
+       
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(asteroidList.Count == 0)
+        {
+            generateAnswer();
+        }
         asteroidList.Clear();
         asteroidList.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
         moveAsteroids();
@@ -100,6 +107,10 @@ public class AsteroidManager : MonoBehaviour
 
     void spawnAsteroids(int count)
     {
+        foreach(GameObject ast in asteroidList)
+        {
+            Destroy(ast);
+        }
         for (int i = 0; i < count; i++)
         {
             asteroidPos = new Vector3(Random.Range(cameraWidth, -cameraWidth), Random.Range(cameraHeight, -cameraHeight), 0);
@@ -109,23 +120,26 @@ public class AsteroidManager : MonoBehaviour
         }
     }
 
-   void generateAnswer()
+    void generateAnswer()
     {
         answers.Clear();
         fakeAnswers.Clear();
+        kanjiDisplay.GetComponent<TextMesh>().text = "";
         answerOnscreen = false;
-        int rand = Random.Range(0, lesson.Length);
-        kanjiDisplay.GetComponent<TextMesh>().text = lesson[rand].kanji;
+        int rand = Random.Range(0,lesson.Length);
+       Kanji rightKanji = lesson[rand];
+        kanjiDisplay.GetComponent<TextMesh>().text = rightKanji.kanji;
 
-        foreach(string o in lesson[rand].on_reading)
+        foreach(string o in rightKanji.on_reading)
         {
             answers.Add(o);
         }
-        foreach (string k in lesson[rand].kun_reading)
+        foreach (string k in rightKanji.kun_reading)
         {
             answers.Add(k);
         }
         generateFakeAnswers();
+        spawnAsteroids(numAsteroidsOnScreen);
     }
 
     void generateFakeAnswers()
@@ -149,6 +163,13 @@ public class AsteroidManager : MonoBehaviour
             }
         }
     }
-   
+    public void changeScore() 
+    {
+        score++;
+        scoreTracker.GetComponent<TextMesh>().text = string.Format("Score : {0}", score);
+        generateAnswer();
+    
+    }
+
 
 }

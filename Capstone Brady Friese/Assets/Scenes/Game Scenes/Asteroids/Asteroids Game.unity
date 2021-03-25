@@ -149,7 +149,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237045953}
-  m_Text: 'Score: '
+  m_Text: 'Score: 0'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -384,6 +384,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2110902140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6772814134896307410, guid: e9e2013163dc28d45acf54fde2b666c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6772814135014696796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6466525294601131065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +462,16 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1727833581}
+    - target: {fileID: 6466525296316568929, guid: d7c7f537664344a4ca273ef169b2c0e4,
+        type: 3}
+      propertyPath: kanjiDisplay
+      value: 
+      objectReference: {fileID: 2110902140}
+    - target: {fileID: 6466525296316568929, guid: d7c7f537664344a4ca273ef169b2c0e4,
+        type: 3}
+      propertyPath: scoreTracker
+      value: 
+      objectReference: {fileID: 1237045953}
     - target: {fileID: 6466525296316568941, guid: d7c7f537664344a4ca273ef169b2c0e4,
         type: 3}
       propertyPath: m_Name

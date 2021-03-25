@@ -26,10 +26,14 @@ public class Asteroid : MonoBehaviour
        
         if (baseEvent != null)
         {
-           // Debug.Log(this.gameObject.GetComponentInChildren<TextMesh>().text);
+           Debug.Log(this.gameObject.GetComponentInChildren<TextMesh>().text);
             if (answers.Contains(this.gameObject.GetComponentInChildren<TextMesh>().text))
             {
-                
+                managerScript.changeScore();
+            }
+            else
+            {
+                Debug.Log("WRONG");
             }
         }
 
