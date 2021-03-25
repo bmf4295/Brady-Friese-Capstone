@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1782821265070523165}
   - component: {fileID: 1782821265070523164}
-  - component: {fileID: 5994766516045581144}
   - component: {fileID: -326073187365952339}
   - component: {fileID: -7450452487829304553}
   - component: {fileID: 92179105335247863}
@@ -88,26 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5994766516045581144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782821265070523167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88728802c3ac8c45a7580fb95a81e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 1782821265070523167}
-  kanjiDisplay: {fileID: 0}
-  asteroidList: []
-  answers: []
-  numAsteroidsOnScreen: 0
-  asteroidPos: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  mainCamera: {fileID: 0}
 --- !u!114 &-326073187365952339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,10 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd874c1abb154e642ad294df3df73eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 6466525296316568941, guid: d7c7f537664344a4ca273ef169b2c0e4,
-    type: 3}
-  kanjiDisplay: {fileID: 6772814134896307410, guid: e9e2013163dc28d45acf54fde2b666c6,
-    type: 3}
 --- !u!1 &1782821266168434109
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +180,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782821266168434109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.239, y: 0.337, z: 0}
-  m_LocalScale: {x: 0.0609552, y: 0.0609552, z: 0.0609552}
+  m_LocalPosition: {x: -0.374, y: 0.22804, z: 0}
+  m_LocalScale: {x: 0.041449536, y: 0.041449536, z: 0.041449536}
   m_Children: []
   m_Father: {fileID: 1782821265070523165}
   m_RootOrder: 0
@@ -260,7 +235,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782821266168434109}
-  m_Text: "\u304B"
+  m_Text: "\u3088\u3093"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

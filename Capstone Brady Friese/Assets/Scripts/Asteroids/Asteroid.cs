@@ -5,13 +5,15 @@ using UnityEngine.EventSystems;
 public class Asteroid : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject gameManager;
-    public GameObject kanjiDisplay;
-    public GameObject scoreObj;
     private List<string> answers;
+    private GameObject manager;
+    private AsteroidManager managerScript;
     void Start()
     {
-        answers = gameManager.GetComponent<AsteroidManager>().answers;
+       
+        manager = GameObject.FindGameObjectWithTag("GameController");
+        managerScript = manager.GetComponent<AsteroidManager>();
+        answers = managerScript.answers;
     }
 
     // Update is called once per frame
@@ -24,9 +26,10 @@ public class Asteroid : MonoBehaviour
        
         if (baseEvent != null)
         {
-            if (answers.Contains(this.gameObject.GetComponent<TextMesh>().text))
+           // Debug.Log(this.gameObject.GetComponentInChildren<TextMesh>().text);
+            if (answers.Contains(this.gameObject.GetComponentInChildren<TextMesh>().text))
             {
-
+                
             }
         }
 
