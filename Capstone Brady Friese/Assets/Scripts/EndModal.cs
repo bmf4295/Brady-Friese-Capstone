@@ -19,4 +19,8 @@ public class EndModal : MonoBehaviour
     {
         SceneManager.LoadScene("Lesson Screen");
     }
+    public void backToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

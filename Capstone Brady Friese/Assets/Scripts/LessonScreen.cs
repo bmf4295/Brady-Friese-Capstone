@@ -15,7 +15,7 @@ public class LessonScreen : MonoBehaviour
     private int currentLesson;
     private int currentXP;
     private int lessonIntroComplete;
-
+    public GameObject gratsModule;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +77,7 @@ public class LessonScreen : MonoBehaviour
     }
     public void unlockNextLesson()
     {
+        Instantiate(gratsModule);
         string temp = string.Format("Lesson{0}Unlocked", currentLesson+1);
         PlayerPrefs.SetInt(temp, 1);
     }

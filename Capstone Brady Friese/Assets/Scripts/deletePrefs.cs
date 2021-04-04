@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deletePrefs : MonoBehaviour
 {
@@ -29,5 +30,6 @@ public class deletePrefs : MonoBehaviour
         PlayerPrefs.SetInt("Lesson2IntroComplete", 0);
         PlayerPrefs.SetInt("Lesson3IntroComplete", 0);
         PlayerPrefs.SetInt("Lesson4IntroComplete", 0);
+        SceneManager.LoadScene("Start Screen");
     }
 }
