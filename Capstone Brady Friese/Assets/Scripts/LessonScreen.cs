@@ -24,7 +24,6 @@ public class LessonScreen : MonoBehaviour
        
        currentLesson = PlayerPrefs.GetInt("Current Lesson");
        lessonIntroComplete = PlayerPrefs.GetInt(string.Format("Lesson{0}IntroComplete", currentLesson));
-        Debug.Log(lessonIntroComplete);
        currentXP = PlayerPrefs.GetInt("Lesson" + currentLesson + "XP");
         xpText.text = "Experience: " + currentXP;
         if(lessonIntroComplete == 0)
