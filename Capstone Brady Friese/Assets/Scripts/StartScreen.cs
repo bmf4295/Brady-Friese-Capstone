@@ -14,6 +14,7 @@ public class StartScreen : MonoBehaviour
     void Start()
     {
         startButton.onClick.AddListener(changeScene);
+        
     }
 
     // Update is called once per frame

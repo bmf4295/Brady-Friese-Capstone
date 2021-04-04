@@ -9,16 +9,20 @@ public class ManageGame : MonoBehaviour
     public GameObject KanjiDisplay;
     public GameObject scoreCount;
     public GameObject readingIndicator;
+    public Button submit;
     private TextMesh scoreText;
     private ImportKanji kanjiImporter;
     private Kanji[] lesson;
     private List<string> answers;
+    public GameObject endModal;
     private int score;
-    
+    private int xpEarned;
+    private bool paused = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        submit.interactable = false;
         kanjiImporter = this.gameObject.GetComponent<ImportKanji>();
         lesson = kanjiImporter.getLesson();
         answers = new List<string>();
@@ -31,6 +35,21 @@ public class ManageGame : MonoBehaviour
     void Update()
     {
         
+        if (paused)
+        {
+            
+            AnswerDisplay.interactable = false;
+            submit.interactable = false;
+        }
+        else
+        {
+            if (score == 5)
+            {
+                stopGame();
+            }
+            AnswerDisplay.interactable = true;
+            submit.interactable = true;
+        }
     
     }
 
@@ -94,5 +113,24 @@ public class ManageGame : MonoBehaviour
     private void resetText()
     {
         AnswerDisplay.text = "";
+    }
+
+    public void startGame()
+    {
+        Debug.Log("HEllo");
+        paused = false;
+        Destroy(GameObject.FindGameObjectWithTag("Start"));
+    }
+    public void stopGame()
+    {
+        paused = true;
+        Instantiate(endModal);
+        xpEarned = score * 5;
+        GameObject xpText = GameObject.FindGameObjectWithTag("XP");
+        xpText.GetComponent<TMPro.TextMeshPro>().text = string.Format("{0} XP", xpEarned);
+        int currentLesson = PlayerPrefs.GetInt("Current Lesson");
+        int currentXP = PlayerPrefs.GetInt(string.Format("Lesson{0}XP", currentLesson));
+        currentXP += xpEarned;
+        PlayerPrefs.SetInt(string.Format("Lesson{0}XP", currentLesson), currentXP);
     }
 }

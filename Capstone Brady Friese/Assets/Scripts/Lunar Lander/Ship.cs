@@ -10,7 +10,7 @@ public class Ship : MonoBehaviour
     public float thrust = 3;
     public float horizontalMoveSpeed;
     public bool isFlat = true;
-    private bool isPaused = true;
+    public bool isPaused = true;
     void Start()
     {
         shipRigidBody = GetComponent<Rigidbody2D>();
@@ -20,17 +20,26 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 tilt = Input.acceleration;
-        
-         if (isFlat)
-            {
-            float x = Input.acceleration.x * horizontalMoveSpeed;
-                Vector3 force = new Vector3(x, 0,0);
-                shipRigidBody.AddForce(force);
-         }
-        if(Input.touchCount > 0){
+        if (!isPaused)
+        {
+            Time.timeScale = 1;
+            Vector3 tilt = Input.acceleration;
 
-            shipRigidBody.AddForce(Vector3.up * thrust);
+            if (isFlat)
+            {
+                float x = Input.acceleration.x * horizontalMoveSpeed;
+                Vector3 force = new Vector3(x, 0, 0);
+                shipRigidBody.AddForce(force);
+            }
+            if (Input.touchCount > 0)
+            {
+
+                shipRigidBody.AddForce(Vector3.up * thrust);
+            }
+        }
+        else
+        {
+            Time.timeScale = 0;
         }
     }
     public void resetPos()
@@ -45,5 +54,15 @@ public class Ship : MonoBehaviour
             string guess = col.gameObject.GetComponentInChildren<TextMesh>().text;
             gameManager.GetComponent<Score>().checkAnswer(guess);
         }
+    }
+
+    public void startGame()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Start"));
+        isPaused = false;
+    }
+    public void stopGame()
+    {
+        isPaused = true;
     }
 }

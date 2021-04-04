@@ -695,9 +695,10 @@ GameObject:
   - component: {fileID: 6947864248129562546}
   - component: {fileID: 6947864248129562557}
   - component: {fileID: 6947864248129562556}
+  - component: {fileID: 9120084795842136989}
   m_Layer: 0
   m_Name: Start Button
-  m_TagString: Start
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,7 +791,19 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &6947864248129562556
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -799,6 +812,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6947864248129562558}
   m_CullTransparentMesh: 1
+--- !u!70 &9120084795842136989
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947864248129562558}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000011920929, y: -0.0000000037252903}
+  m_Size: {x: 1.0000001, y: 2.0000005}
+  m_Direction: 0
 --- !u!1 &6947864248164533659
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1010,7 @@ GameObject:
   - component: {fileID: 6947864248171350227}
   m_Layer: 0
   m_Name: Asteroids Start Modal
-  m_TagString: Untagged
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

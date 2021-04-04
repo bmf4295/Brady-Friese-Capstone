@@ -10,6 +10,7 @@ public class LessonScreen : MonoBehaviour
     public Button decoderButton;
     public Button asteroidButton;
     public Button unlockButton;
+    public Button backButton;
     public Text xpText;
     private int currentLesson;
     private int currentXP;
@@ -79,5 +80,9 @@ public class LessonScreen : MonoBehaviour
     {
         string temp = string.Format("Lesson{0}Unlocked", currentLesson+1);
         PlayerPrefs.SetInt(temp, 1);
+    }
+    public void backAScreen()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

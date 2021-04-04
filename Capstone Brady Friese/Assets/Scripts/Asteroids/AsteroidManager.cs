@@ -200,6 +200,6 @@ public class AsteroidManager : MonoBehaviour
         int currentLesson = PlayerPrefs.GetInt("Current Lesson");
         int currentXP = PlayerPrefs.GetInt(string.Format("Lesson{0}XP", currentLesson));
         currentXP += xpEarned;
-        PlayerPrefs.SetInt(string.Format("Lesson{0}XP", currentLesson), xpEarned);
+        PlayerPrefs.SetInt(string.Format("Lesson{0}XP", currentLesson), currentXP);
     }
 }
