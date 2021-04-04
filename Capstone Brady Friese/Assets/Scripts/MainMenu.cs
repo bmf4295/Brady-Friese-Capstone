@@ -13,17 +13,29 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         
-        if (PlayerPrefs.GetInt("Lesson2Complete")== 0)
+        if (PlayerPrefs.GetInt("Lesson2Unlocked")== 0)
         {
             lesson2Button.interactable = false;
         }
-        if (PlayerPrefs.GetInt("Lesson3Complete") == 0)
+        else
+        {
+            lesson2Button.interactable = true;
+        }
+        if (PlayerPrefs.GetInt("Lesson3Unlocked") == 0)
         {
             lesson3Button.interactable = false;
         }
-        if (PlayerPrefs.GetInt("Lesson4Complete") == 0)
+        else
+        {
+            lesson3Button.interactable = true;
+        }
+        if (PlayerPrefs.GetInt("Lesson4Unlocked") == 0)
         {
             lesson4Button.interactable = false;
+        }
+        else
+        {
+            lesson4Button.interactable = true;
         }
 
 

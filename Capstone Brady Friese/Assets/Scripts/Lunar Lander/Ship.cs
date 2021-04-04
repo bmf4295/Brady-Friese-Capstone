@@ -10,6 +10,7 @@ public class Ship : MonoBehaviour
     public float thrust = 3;
     public float horizontalMoveSpeed;
     public bool isFlat = true;
+    private bool isPaused = true;
     void Start()
     {
         shipRigidBody = GetComponent<Rigidbody2D>();

@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class AsteroidManager : MonoBehaviour
 {
 
     public GameObject asteroid;
     public GameObject kanjiDisplay;
     public List<GameObject> asteroidList;
-    
+    public GameObject EndModal;
     public int numAsteroidsOnScreen;
     public Vector3 asteroidPos;
     public Vector3 velocity;
@@ -22,6 +22,8 @@ public class AsteroidManager : MonoBehaviour
     public bool answerOnscreen;
     public int score;
     public GameObject scoreTracker;
+    private bool paused = true;
+    private int xpEarned;
     void Start()
     {
         score = 0;
@@ -34,20 +36,25 @@ public class AsteroidManager : MonoBehaviour
         cameraHeight = mainCamera.orthographicSize;
         cameraWidth = cameraWidth * mainCamera.aspect;
         asteroidList = new List<GameObject>();
-       
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(asteroidList.Count == 0)
+        if (!paused)
         {
-            generateAnswer();
+            if(score == 5)
+            {
+                stopGame();
+            }
+            if (asteroidList.Count == 0)
+            {
+                generateAnswer();
+            }
+            asteroidList.Clear();
+            asteroidList.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
+            moveAsteroids();
         }
-        asteroidList.Clear();
-        asteroidList.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
-        moveAsteroids();
     }
 
     void moveAsteroids()
@@ -171,5 +178,23 @@ public class AsteroidManager : MonoBehaviour
     
     }
 
+    public void startGame()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Start"));
+        paused = false;
 
+    }
+
+    public void stopGame()
+    {
+        paused = true;
+        Instantiate(EndModal);
+        xpEarned = score * 5;
+        GameObject xpText = GameObject.FindGameObjectWithTag("XP");
+        xpText.GetComponent<TMPro.TextMeshPro>().text = string.Format("{0} XP", xpEarned);
+        int currentLesson = PlayerPrefs.GetInt("Current Lesson");
+        int currentXP = PlayerPrefs.GetInt(string.Format("Lesson{0}XP", currentLesson));
+        currentXP += xpEarned;
+        PlayerPrefs.SetInt(string.Format("Lesson{0}XP", currentLesson), xpEarned);
+    }
 }

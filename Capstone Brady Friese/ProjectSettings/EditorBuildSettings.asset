@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lesson Screen.unity
     guid: 3d030f591f17987429f178f4d4b6ce90
+  - enabled: 1
+    path: Assets/Scenes/Lesson Intro.unity
+    guid: c3df41daf5fc8cb438e79270cea5c6d5
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Asteroids/Asteroids Game.unity
+    guid: a0022450a31899949bf3f5a7c889d89f
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Decoder/Decoder Game.unity
+    guid: 118a878b6bf097e40acc790b3ff430e1
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Lunar Lander/Lunar Lander Game.unity
+    guid: 0e79366a19a557f4e99699c3cdcdcd22
   m_configObjects: {}

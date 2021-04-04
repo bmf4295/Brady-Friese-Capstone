@@ -9,6 +9,11 @@ TagManager:
   - Ground
   - startPosLunarLander
   - Asteroid
+  - Prev
+  - Next
+  - Start
+  - Back
+  - XP
   layers:
   - Default
   - TransparentFX
