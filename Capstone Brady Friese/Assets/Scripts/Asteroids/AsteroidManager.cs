@@ -187,6 +187,11 @@ public class AsteroidManager : MonoBehaviour
 
     public void stopGame()
     {
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("Asteroid");
+        foreach (GameObject a in temp)
+        {
+            Destroy(a);
+        }
         paused = true;
         Instantiate(EndModal);
         xpEarned = score * 5;
