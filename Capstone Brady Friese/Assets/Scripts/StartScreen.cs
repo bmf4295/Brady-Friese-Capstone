@@ -24,6 +24,6 @@ public class StartScreen : MonoBehaviour
     }
     public void changeScene()
     {
-        SceneManager.LoadScene(mainMenu.name);
+        SceneManager.LoadScene("Main Menu");
     }
 }
