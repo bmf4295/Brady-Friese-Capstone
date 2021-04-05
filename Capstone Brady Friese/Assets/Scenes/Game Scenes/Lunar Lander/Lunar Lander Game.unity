@@ -794,8 +794,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1752284289}
-  thrust: 4
-  horizontalMoveSpeed: 10
+  thrust: 50
+  horizontalMoveSpeed: 50
   isFlat: 1
   isPaused: 1
 --- !u!4 &1417639250 stripped

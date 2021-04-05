@@ -76,4 +76,9 @@ public class MainMenu : MonoBehaviour
         }
         SceneManager.LoadScene("Lesson Screen");
     }
+
+    public void backToStart()
+    {
+        SceneManager.LoadScene("Start Screen");
+    }
 }

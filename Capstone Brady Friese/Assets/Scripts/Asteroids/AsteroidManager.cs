@@ -63,7 +63,7 @@ public class AsteroidManager : MonoBehaviour
         {
             Vector3 acceleration = 1.2f * asteroidList[i].transform.up;
             velocity += acceleration;
-            velocity = Vector3.ClampMagnitude(velocity, .015f);
+            velocity = Vector3.ClampMagnitude(velocity, .15f);
             asteroidList[i].transform.position += velocity;
 
         }
