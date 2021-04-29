@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 public class Asteroid : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -26,8 +27,7 @@ public class Asteroid : MonoBehaviour
        
         if (baseEvent != null)
         {
-           Debug.Log(this.gameObject.GetComponentInChildren<TextMesh>().text);
-            if (answers.Contains(this.gameObject.GetComponentInChildren<TextMesh>().text))
+            if (answers.Contains(this.gameObject.GetComponentInChildren<TextMeshPro>().text))
             {
                 managerScript.changeScore();
             }
