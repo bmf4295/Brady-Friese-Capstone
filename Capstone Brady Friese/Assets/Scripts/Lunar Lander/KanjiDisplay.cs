@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class KanjiDisplay : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class KanjiDisplay : MonoBehaviour
     }
     public void changeKanjiDisplay()
     {
-        kanjiDisplay.GetComponent<TextMesh>().text = currentKanjiOrReading;
+        kanjiDisplay.GetComponent<TMPro.TextMeshPro>().text = currentKanjiOrReading;
     }
 
     public void generateNewKanjiOrReading()
@@ -91,14 +92,15 @@ public class KanjiDisplay : MonoBehaviour
         int randIndex;
         //set 1 random station to the answer
         GameObject correctStation = stations[cStationIndex];
-        TextMesh correctMesh = correctStation.GetComponentInChildren<TextMesh>();
+
+        
         if (answerIsKanji)
         {
-            correctMesh.text = answers[0];
+            correctStation.GetComponentInChildren<TMPro.TextMeshPro>().text = answers[0];
         }
         else
         {
-            correctMesh.text = answers[Random.Range(0, answers.Count)];
+            correctStation.GetComponentInChildren<TMPro.TextMeshPro>().text = answers[Random.Range(0, answers.Count)];
         }
         for (int i = 0; i< stations.Length; i++)
         {
@@ -122,7 +124,7 @@ public class KanjiDisplay : MonoBehaviour
                 }
                 randIndex = Random.Range(0, usedFakeAnswers.Count - 1);
           
-                TextMesh stationMesh = stations[i].GetComponentInChildren<TextMesh>();
+                TMP_Text stationMesh = stations[i].GetComponentInChildren<TMPro.TextMeshPro>();
                 stationMesh.text = usedFakeAnswers[randIndex];
                 usedFakeAnswers.RemoveAt(randIndex);
             }
@@ -163,8 +165,8 @@ public class KanjiDisplay : MonoBehaviour
                     }
                 }
                 randIndex = Random.Range(0, usedFakeAnswers.Count - 1);
-                TextMesh stationMesh = stations[i].GetComponentInChildren<TextMesh>();
-                    stationMesh.text = usedFakeAnswers[randIndex];
+                TMP_Text stationMesh = stations[i].GetComponentInChildren<TMPro.TextMeshPro>();
+                stationMesh.text = usedFakeAnswers[randIndex];
                     usedFakeAnswers.RemoveAt(randIndex);
                 
             }

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R38M701DP9M",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 21227,
+        "processId": 21545,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -102,6 +102,12 @@
             "deviceId": "R38M701DP9M",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 21227,
+            "exited": false
+        },
+        {
+            "deviceId": "R38M701DP9M",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 21545,
             "exited": false
         }
     ],

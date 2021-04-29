@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Ship : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class Ship : MonoBehaviour
       
         if (col.gameObject.tag == "LunarStation")
         {
-            string guess = col.gameObject.GetComponentInChildren<TextMesh>().text;
+            string guess = col.gameObject.GetComponentInChildren<TMPro.TextMeshPro>().text;
             gameManager.GetComponent<Score>().checkAnswer(guess);
         }
     }

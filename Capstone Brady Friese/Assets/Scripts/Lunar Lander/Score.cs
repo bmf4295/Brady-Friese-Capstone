@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -9,15 +10,17 @@ public class Score : MonoBehaviour
     public GameObject ship;
     public GameObject finalModal;
     public GameObject endModal;
-    private TextMesh scoreText;
+    private TMP_Text scoreText;
     private int xpEarned;
     private bool paused= false;
  
     int score=0;
     private void Awake()
     {
-        scoreText = scoreObj.GetComponent<TextMesh>();
+        scoreText = scoreObj.GetComponent<TMPro.TextMeshPro>();
         scoreText.text = string.Format("Score:{0}", score);
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+
     }
     void Start()
     {

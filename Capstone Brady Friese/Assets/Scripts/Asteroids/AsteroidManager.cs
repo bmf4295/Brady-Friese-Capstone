@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class AsteroidManager : MonoBehaviour
 {
 
@@ -101,13 +102,13 @@ public class AsteroidManager : MonoBehaviour
         if (answerOnscreen== false)
         {
             rand = Random.Range(0, answers.Count);
-            ast.GetComponentInChildren<TextMesh>().text = answers[rand];
+            ast.GetComponentInChildren<TextMeshPro>().text = answers[rand];
             answerOnscreen = true;
         }
         else
         {
             rand = Random.Range(0, fakeAnswers.Count);
-            ast.GetComponentInChildren<TextMesh>().text = fakeAnswers[rand];
+            ast.GetComponentInChildren<TextMeshPro>().text = fakeAnswers[rand];
             fakeAnswers.RemoveAt(rand);
         }
     }
@@ -131,11 +132,11 @@ public class AsteroidManager : MonoBehaviour
     {
         answers.Clear();
         fakeAnswers.Clear();
-        kanjiDisplay.GetComponent<TextMesh>().text = "";
+        kanjiDisplay.GetComponent<TextMeshPro>().text = "";
         answerOnscreen = false;
         int rand = Random.Range(0,lesson.Length);
        Kanji rightKanji = lesson[rand];
-        kanjiDisplay.GetComponent<TextMesh>().text = rightKanji.kanji;
+        kanjiDisplay.GetComponent<TextMeshPro>().text = rightKanji.kanji;
 
         foreach(string o in rightKanji.on_reading)
         {
@@ -173,7 +174,7 @@ public class AsteroidManager : MonoBehaviour
     public void changeScore() 
     {
         score++;
-        scoreTracker.GetComponent<TextMesh>().text = string.Format("Score : {0}", score);
+        scoreTracker.GetComponent<TextMeshPro>().text = string.Format("Score : {0}", score);
         generateAnswer();
     
     }

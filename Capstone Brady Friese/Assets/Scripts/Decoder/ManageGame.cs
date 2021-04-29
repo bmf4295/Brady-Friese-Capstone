@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class ManageGame : MonoBehaviour
 {
     public InputField AnswerDisplay;
@@ -10,7 +10,7 @@ public class ManageGame : MonoBehaviour
     public GameObject scoreCount;
     public GameObject readingIndicator;
     public Button submit;
-    private TextMesh scoreText;
+    private TMP_Text scoreText;
     private ImportKanji kanjiImporter;
     private Kanji[] lesson;
     private List<string> answers;
@@ -26,7 +26,7 @@ public class ManageGame : MonoBehaviour
         kanjiImporter = this.gameObject.GetComponent<ImportKanji>();
         lesson = kanjiImporter.getLesson();
         answers = new List<string>();
-        scoreText = scoreCount.GetComponent<TextMesh>();
+        scoreText = scoreCount.GetComponent<TMPro.TextMeshPro>();
 
         changeKanji();
     }
@@ -65,7 +65,7 @@ public class ManageGame : MonoBehaviour
             {
                 answers.Add(k);
             }
-            readingIndicator.GetComponent<TextMesh>().text = "Reading: Kun-reading";
+            readingIndicator.GetComponent<TextMeshPro>().text = "Reading: Kun-reading";
         }
         else
         {
@@ -74,17 +74,17 @@ public class ManageGame : MonoBehaviour
                 answers.Add(o);
 
             }
-            readingIndicator.GetComponent<TextMesh>().text = "Reading: On-reading";
+            readingIndicator.GetComponent<TMPro.TextMeshPro>().text = "Reading: On-reading";
         }
       
        
-        KanjiDisplay.GetComponent<TextMesh>().text = randomKanji.kanji;
+        KanjiDisplay.GetComponent<TMPro.TextMeshPro>().text = randomKanji.kanji;
     }
 
    public void openKeyboard()
     {
         Debug.Log(AnswerDisplay.text);
-        //ouchScreenKeyboard.Open(AnswerDisplay.get, TouchScreenKeyboardType.ASCIICapable, false, false, false, false);
+        TouchScreenKeyboard.Open(AnswerDisplay.GetComponent<Text>().text, TouchScreenKeyboardType.ASCIICapable, false, false, false, false);
     }
 
     public void submitAnswer()
@@ -127,7 +127,7 @@ public class ManageGame : MonoBehaviour
         Instantiate(endModal);
         xpEarned = score * 5;
         GameObject xpText = GameObject.FindGameObjectWithTag("XP");
-        xpText.GetComponent<TMPro.TextMeshPro>().text = string.Format("{0} XP", xpEarned);
+        xpText.GetComponent<TextMeshPro>().text = string.Format("{0} XP", xpEarned);
         int currentLesson = PlayerPrefs.GetInt("Current Lesson");
         int currentXP = PlayerPrefs.GetInt(string.Format("Lesson{0}XP", currentLesson));
         currentXP += xpEarned;

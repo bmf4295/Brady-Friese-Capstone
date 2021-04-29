@@ -15,6 +15,7 @@ TagManager:
   - Back
   - XP
   - Grats
+  - Wall
   layers:
   - Default
   - TransparentFX

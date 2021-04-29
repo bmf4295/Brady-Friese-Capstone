@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class LessonScreen : MonoBehaviour
 {
     public Button introButton;
@@ -11,7 +12,7 @@ public class LessonScreen : MonoBehaviour
     public Button asteroidButton;
     public Button unlockButton;
     public Button backButton;
-    public Text xpText;
+    public TextMeshPro xpText;
     private int currentLesson;
     private int currentXP;
     private int lessonIntroComplete;
